@@ -6,6 +6,17 @@ var express = require('express'),
 
 app.use(bodyParser.json());
 
+app.post('/', function(req, res){
+    if (req.body.password) {
+        console.log(req.body.password);
+        console.table(req.body);
+        res.status(204);
+    } else {
+        res.status(400);
+    }
+    res.end();
+});
+
 app.use('/v1', router);
 
 app.listen(port, function() {
