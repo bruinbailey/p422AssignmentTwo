@@ -6,7 +6,7 @@ var express = require('express'),
 
 app.use(bodyParser.json({type: 'application/json'}));
 
-app.use('/v1', router);
+app.use('/v1/password/passwordHealth', router);
 
 app.post('/', function(req, res){
     if (req.body.password) {
