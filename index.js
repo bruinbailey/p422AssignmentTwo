@@ -6,7 +6,7 @@ var express = require('express'),
 
 app.use(bodyParser.json({type: 'application/json'}));
 
-app.use('/v1/password/passwordHealth', router);
+app.use('/v1/passwords/passwordHealth', router);
 
 
 app.listen(port, function() {
