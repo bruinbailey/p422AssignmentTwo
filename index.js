@@ -4,7 +4,9 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     port = 8080;
 
-app.use(bodyParser.json());
+app.use(bodyParser.json({type: 'application/json'}));
+
+app.use('/v1', router);
 
 app.post('/', function(req, res){
     if (req.body.password) {
@@ -17,7 +19,6 @@ app.post('/', function(req, res){
     res.end();
 });
 
-app.use('/v1', router);
 
 app.listen(port, function() {
     console.log("Listening on "+ port)
